@@ -9,6 +9,11 @@
   src: url("../icon/Linotte.otf");
 }
 
+@font-face {
+  font-family: "Circe";
+  src: url("../icon/circe.otf");
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -53,4 +58,226 @@ root {
   --color2: #fa4a4d;
   --cor3: #ffc10e;
   --color4: #3db9ec;
+  --color5: #388e3c;
+  --color6: #222332;
+  --color7: #1a1b1e;
+}
+
+header {
+  width: 100%;
+  padding: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+header nav h1 {
+  float: left;
+  color: #3c5063;
+  font-family: Circe;
+}
+
+header nav h1 span {
+  font-weight: 400;
+  color: #388e3c;
+  font-family: unset;
+}
+
+header nav ul {
+  display: inline-block;
+  vertical-align: middle;
+  padding: .2rem 0 0 18rem;
+}
+
+header nav ul li {
+  margin: 0 1.5rem;
+  font-weight: 400;
+  line-height: 0px;
+  font-size: 1.1rem;
+  font-family: Circe;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+header div {
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+header div i {
+  margin: 0 1rem;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+
+header div img {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+section {
+  width: 100%;
+  padding: 2.3rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+section hgroup {
+  width: 450px;
+}
+
+section hgroup h1, section hgroup h2 {
+  font-weight: 900;
+  font-size: 2.4rem;
+}
+
+section hgroup h1 {
+  color: #388e3c;
+  font-family: Circe;
+}
+
+section hgroup h2 {
+  color: #333;
+}
+
+section hgroup p {
+  line-height: 28px;
+}
+
+section hgroup a {
+  width: 30%;
+  color: #fff;
+  display: block;
+  margin: .6rem 0 0;
+  font-weight: 400;
+  text-align: center;
+  padding: .5rem 1rem;
+  border-radius: 20px;
+  letter-spacing: 2px;
+  background: #388e3c;
+}
+
+section .back-front {
+  width: 700px;
+  padding: 0px;
+  height: 370px;
+  position: relative;
+  background: #a6c5a7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+section .back-front::after {
+  content: "";
+  z-index: -2;
+  top: -39.5rem;
+  right: -10rem;
+  width: 1100px;
+  height: 1100px;
+  display: block;
+  overflow: hidden;
+  background: #eee;
+  position: fixed;
+  border-radius: 50%;
+}
+
+section .back-front .produtos {
+  width: 100%;
+  height: 300px;
+  display: block;
+  overflow: hidden;
+  top: 0px;
+  margin: 0 auto;
+  position: absolute;
+  padding: 3.5rem 0 0;
+}
+
+section .back-front .produtos ul {
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  border: 3px dotted #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+}
+
+section .back-front .produtos ul li {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 50%;
+  transform: rotate(calc(var(--x) * (360deg / 10))) translateY(235px);
+}
+
+section .back-front .produtos ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(calc(var(--x) * (-360deg / 10)));
+}
+
+section .back-front div.front {
+  top: 3.8rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+}
+
+section .back-front div.front img {
+  width: 275px;
+  height: 275px;
+  padding: 1rem;
+  margin: 0 auto;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+section .back-front div.controls {
+  bottom: 0px;
+  width: 500px;
+  display: block;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 0px;
+}
+
+section .back-front div.controls i {
+  z-index: 2;
+  color: #fff;
+  cursor: pointer;
+  padding: .7rem;
+  border-radius: 50%;
+  background: #388e3c;
 }
