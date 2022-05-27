@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Lato";
+  src: url("../icon/Lato.ttf");
+}
+
+@font-face {
+  font-family: "Linotte";
+  src: url("../icon/Linotte.otf");
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-weight: 600;
+  font-family: Lato;
+  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+::scrollbar {
+  width: 0px !important;
+}
+
+*::scrollbar {
+  width: 0px !important;
+}
+
+*::-webkit-scrollbar {
+  width: 0px !important;
+}
+
+*::-moz-scrollbar {
+  width: 0px !important;
+}
+
+*::-ms-scrollbar {
+  width: 0px !important;
+}
+
+*::-moz-osx-scrollbar {
+  width: 0px !important;
+}
+
+*::-o-scrollbar {
+  width: 0px !important;
+}
