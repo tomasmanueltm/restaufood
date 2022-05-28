@@ -149,7 +149,6 @@ header div img {
 }
 
 section {
-  bottom: 50px;
   position: relative;
   width: 100%;
   padding: 3rem;
@@ -175,8 +174,28 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row-reverse;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column-reverse;
-    gap: 12rem;
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 577px) {
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    gap: 8rem;
   }
 }
 
@@ -272,7 +291,7 @@ section hgroup a {
   margin: .6rem 0 0;
   font-weight: 400;
   text-align: center;
-  padding: .5rem 1rem;
+  padding: .6rem 1rem;
   border-radius: 20px;
   letter-spacing: 2px;
   background: var(--atual);
@@ -295,6 +314,32 @@ section div.back-front {
     width: 1100px;
     height: 455px;
   }
+}
+
+@media (max-width: 998px) {
+  section div.back-front {
+    left: 0px;
+    top: 0rem;
+    width: 100%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  section div.back-front {
+    top: 0rem;
+    left: unset;
+  }
+}
+
+@media (max-width: 577px) {
+  section div.back-front {
+    top: unset;
+    height: unset;
+  }
+}
+
+@media (max-width: 1230px) {
   section div.back-front .org {
     top: 7rem;
     left: 0rem;
@@ -304,12 +349,16 @@ section div.back-front {
 }
 
 @media (max-width: 998px) {
-  section div.back-front {
-    top: 6rem;
-    width: 100%;
-    height: unset;
-  }
   section div.back-front .org {
+    left: 0rem;
+    top: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section div.back-front .org {
+    top: unset;
+    left: unset;
     width: 100%;
     display: flex;
     align-items: center;
@@ -336,15 +385,6 @@ section div.back-front .produtos {
   gap: 0px;
 }
 
-section div.back-front .produtos::before {
-  width: 100%;
-  content: "";
-  height: 100%;
-  display: block;
-  border-radius: 50%;
-  border: 2px dotted var(--atual);
-}
-
 @media (max-width: 1230px) {
   section div.back-front .produtos {
     left: -18.5rem;
@@ -353,14 +393,15 @@ section div.back-front .produtos::before {
 
 @media (max-width: 998px) {
   section div.back-front .produtos {
-    top: -1rem;
+    top: 0rem;
     width: 500px;
     height: 500px;
-    right: -.5rem;
+    right: unset;
     margin: 0 auto;
+    overflow: unset;
     position: absolute;
     display: flex;
-    align-items: flex-start;
+    align-items: _;
     justify-content: center;
     flex-direction: row;
     gap: 0px;
@@ -391,13 +432,13 @@ section div.back-front .produtos div {
 @media (max-width: 1230px) {
   section div.back-front .produtos div {
     left: 2.5rem;
-    transform: translate(15px, 10px) rotate(-5deg);
   }
 }
 
 @media (max-width: 998px) {
   section div.back-front .produtos div {
-    top: -3.5rem;
+    left: unset;
+    top: -1rem;
     bottom: unset;
     height: 300px;
     overflow: unset;
@@ -443,6 +484,12 @@ section div.back-front .produtos div ul li {
   transform: rotate(calc(var(--x) * (360deg / 10))) translateY(295px);
 }
 
+@media (max-width: 998px) {
+  section div.back-front .produtos div ul li {
+    transform: rotate(calc(var(--x) * (360deg / 10))) translateY(245px);
+  }
+}
+
 @media (max-width: 768px) {
   section div.back-front .produtos div ul li {
     border: 3px solid var(--atual);
@@ -454,7 +501,6 @@ section div.back-front .produtos div ul li {
   section div.back-front .produtos div ul li {
     width: 70px;
     height: 70px;
-    transform: rotate(calc(var(--x) * (360deg / 10))) translateY(198px);
   }
 }
 
@@ -484,16 +530,17 @@ section div.back-front div.img {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 998px) {
   section div.back-front div.img {
-    left: 0rem;
-    top: -3.6rem;
+    top: 3rem;
+    left: -8rem;
   }
 }
 
-@media (max-width: 577px) {
+@media (max-width: 768px) {
   section div.back-front div.img {
-    top: -3.3rem;
+    left: 0rem;
+    top: 2rem;
   }
 }
 
@@ -504,8 +551,19 @@ section div.back-front div.img img {
   width: 230px;
   height: 230px;
   border-radius: 50%;
-  padding: 0.1rem;
+  padding: 0px;
   object-fit: cover;
+  border: 6px solid var(--atual);
+}
+
+@media (max-width: 998px) {
+  section div.back-front div.img img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    padding: _;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 768px) {
@@ -555,15 +613,27 @@ section div.back-front div.controls {
   }
 }
 
+@media (max-width: 998px) {
+  section div.back-front div.controls {
+    width: 10%;
+    right: 0px;
+    left: -5rem;
+    bottom: -5.7rem;
+  }
+}
+
 @media (max-width: 768px) {
   section div.back-front div.controls {
+    left: unset;
+    width: 100%;
+    right: unset;
     bottom: -3rem;
   }
 }
 
 @media (max-width: 577px) {
   section div.back-front div.controls {
-    bottom: -4rem;
+    bottom: -6rem;
   }
 }
 
@@ -580,4 +650,16 @@ section div.back-front div.controls i {
   justify-content: center;
   flex-direction: row;
   gap: 0px;
+}
+
+@media (max-width: 998px) {
+  section div.back-front div.controls i:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  section div.back-front div.controls i:last-child {
+    display: flex;
+  }
 }
