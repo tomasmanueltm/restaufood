@@ -137,7 +137,16 @@ header div i {
   cursor: pointer;
   font-weight: 900;
   font-size: 1.1rem;
+  position: relative;
   vertical-align: middle;
+}
+
+header div i span {
+  right: 0rem;
+  top: -0.4rem;
+  font-size: .5rem;
+  position: absolute;
+  font-style: normal;
 }
 
 header div img {
@@ -383,6 +392,19 @@ section div.back-front .produtos {
   justify-content: center;
   flex-direction: row;
   gap: 0px;
+}
+
+@media (max-width: 577px) {
+  section div.back-front .produtos::before {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    border: 2px dotted var(--atual);
+    content: "";
+    top: 3rem;
+  }
 }
 
 @media (max-width: 1230px) {
@@ -661,5 +683,25 @@ section div.back-front div.controls i {
 @media (max-width: 768px) {
   section div.back-front div.controls i:last-child {
     display: flex;
+  }
+}
+
+footer {
+  width: 100%;
+  bottom: 0px;
+  padding: 2rem;
+  position: absolute;
+}
+
+footer span a {
+  color: #3c5063;
+  font-size: 1.3rem;
+  margin: 0 1rem 0 0;
+}
+
+@media (max-width: 1100px) {
+  footer {
+    padding: 1.9rem;
+    position: relative;
   }
 }
