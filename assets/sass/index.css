@@ -20,6 +20,7 @@
   list-style: none;
   font-weight: 600;
   font-family: Lato;
+  word-break: keep-all;
   text-decoration: none;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -62,6 +63,7 @@ body {
   --color6: #222332;
   --color7: #1a1b1e;
   --atual: #388e3c;
+  overflow-x: hidden;
 }
 
 header {
@@ -86,10 +88,28 @@ header nav h1 span {
   font-family: unset;
 }
 
+@media (max-width: 1230px) {
+  header nav h1 span {
+    color: #fff;
+  }
+}
+
+@media (max-width: 998px) {
+  header nav h1 span {
+    color: #388e3c;
+  }
+}
+
 header nav ul {
   display: inline-block;
   vertical-align: middle;
   padding: .2rem 0 0 18rem;
+}
+
+@media (max-width: 998px) {
+  header nav ul {
+    display: none;
+  }
 }
 
 header nav ul li {
@@ -129,17 +149,82 @@ header div img {
 }
 
 section {
+  bottom: 50px;
+  position: relative;
   width: 100%;
-  padding: 2.3rem;
+  padding: 3rem;
   display: flex;
   align-items: flex-end;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
   gap: 1rem;
 }
 
+@media (max-width: 1230px) {
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 12rem;
+  }
+}
+
+@media (max-width: 998px) {
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    gap: 12rem;
+  }
+}
+
 section hgroup {
   width: 450px;
+  position: relative;
+}
+
+@media (max-width: 1230px) {
+  section hgroup {
+    top: 0rem;
+    width: 680px;
+  }
+}
+
+@media (max-width: 1100px) {
+  section hgroup {
+    top: 0rem;
+    width: 680px;
+  }
+}
+
+@media (max-width: 1095px) {
+  section hgroup {
+    top: .2rem;
+    width: 580px;
+  }
+}
+
+@media (max-width: 1050px) {
+  section hgroup {
+    top: 5rem;
+    width: 580px;
+    right: -0rem;
+  }
+}
+
+@media (max-width: 998px) {
+  section hgroup {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  section hgroup {
+    top: 1rem;
+    width: 100%;
+  }
 }
 
 section hgroup h1, section hgroup h2 {
@@ -147,9 +232,21 @@ section hgroup h1, section hgroup h2 {
   font-size: 2.4rem;
 }
 
+@media (max-width: 1095px) {
+  section hgroup h1, section hgroup h2 {
+    font-size: 2rem;
+  }
+}
+
 section hgroup h1 {
-  color: var(--atual);
   font-family: Circe;
+  color: var(--atual);
+}
+
+@media (max-width: 1095px) {
+  section hgroup h1 {
+    line-height: 25px;
+  }
 }
 
 section hgroup h2 {
@@ -158,6 +255,14 @@ section hgroup h2 {
 
 section hgroup p {
   line-height: 28px;
+  text-align: initial;
+  word-break: keep-all;
+}
+
+@media (max-width: 1230px) {
+  section hgroup p {
+    word-break: break-all;
+  }
 }
 
 section hgroup a {
@@ -173,41 +278,56 @@ section hgroup a {
   background: var(--atual);
 }
 
-section .back-front {
-  width: 550px;
+section div.back-front {
+  width: 710px;
   padding: 0px;
-  height: 370px;
+  height: 300px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1rem;
 }
 
-section .back-front::after {
-  z-index: -2;
-  top: -39.8rem;
-  right: -10rem;
-  width: 1100px;
-  height: 1100px;
-  display: block;
-  overflow: hidden;
-  background: #eee;
-  position: fixed;
-  border-radius: 50%;
+@media (max-width: 1230px) {
+  section div.back-front {
+    width: 1100px;
+    height: 455px;
+  }
+  section div.back-front .org {
+    top: 7rem;
+    left: 0rem;
+    width: 600px;
+    position: absolute;
+  }
 }
 
-section .back-front .produtos {
+@media (max-width: 998px) {
+  section div.back-front {
+    top: 6rem;
+    width: 100%;
+    height: unset;
+  }
+  section div.back-front .org {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
+section div.back-front .produtos {
   z-index: -2;
-  top: -39rem;
-  right: -10rem;
+  top: -48rem;
+  right: -12rem;
   width: 1100px;
   height: 1100px;
   overflow: hidden;
-  background: red;
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   background: var(--atual);
   display: flex;
   align-items: flex-end;
@@ -216,24 +336,89 @@ section .back-front .produtos {
   gap: 0px;
 }
 
-section .back-front .produtos div {
+section div.back-front .produtos::before {
+  width: 100%;
+  content: "";
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  border: 2px dotted var(--atual);
+}
+
+@media (max-width: 1230px) {
+  section div.back-front .produtos {
+    left: -18.5rem;
+  }
+}
+
+@media (max-width: 998px) {
+  section div.back-front .produtos {
+    top: -1rem;
+    width: 500px;
+    height: 500px;
+    right: -.5rem;
+    margin: 0 auto;
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    gap: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  section div.back-front .produtos {
+    bottom: 2rem;
+    left: 0px;
+    width: 400px;
+    height: 400px;
+    overflow: unset;
+    background: unset;
+    position: relative;
+  }
+}
+
+section div.back-front .produtos div {
   width: 100%;
   bottom: 20px;
-  height: 270px;
+  height: 340px;
   margin: 0 auto;
-  display: block;
-  overflow: hidden;
   position: absolute;
   padding: 3.5rem 0 0;
 }
 
-section .back-front .produtos div ul {
-  width: 450px;
-  height: 450px;
+@media (max-width: 1230px) {
+  section div.back-front .produtos div {
+    left: 2.5rem;
+    transform: translate(15px, 10px) rotate(-5deg);
+  }
+}
+
+@media (max-width: 998px) {
+  section div.back-front .produtos div {
+    top: -3.5rem;
+    bottom: unset;
+    height: 300px;
+    overflow: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  section div.back-front .produtos div {
+    left: unset;
+    transform: unset;
+  }
+}
+
+section div.back-front .produtos div ul {
+  z-index: 0;
+  width: 580px;
+  height: 580px;
   margin: 0 auto;
   border-radius: 50%;
   position: relative;
-  border: 3px dotted #ccc;
+  border: 1px dashed #95c454;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,25 +426,50 @@ section .back-front .produtos div ul {
   gap: 0px;
 }
 
-section .back-front .produtos div ul li {
-  width: 80px;
-  height: 80px;
+@media (max-width: 998px) {
+  section div.back-front .produtos div ul {
+    width: 400px;
+    border: none;
+    height: 400px;
+  }
+}
+
+section div.back-front .produtos div ul li {
+  width: 90px;
+  height: 90px;
   overflow: hidden;
   position: absolute;
   border-radius: 50%;
-  transform: rotate(calc(var(--x) * (360deg / 10))) translateY(235px);
+  transform: rotate(calc(var(--x) * (360deg / 10))) translateY(295px);
 }
 
-section .back-front .produtos div ul li img {
+@media (max-width: 768px) {
+  section div.back-front .produtos div ul li {
+    border: 3px solid var(--atual);
+    transform: rotate(calc(var(--x) * (360deg / 10))) translateY(198px);
+  }
+}
+
+@media (max-width: 577px) {
+  section div.back-front .produtos div ul li {
+    width: 70px;
+    height: 70px;
+    transform: rotate(calc(var(--x) * (360deg / 10))) translateY(198px);
+  }
+}
+
+section div.back-front .produtos div ul li img {
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transform: rotate(calc(var(--x) * (-360deg / 10)));
 }
 
-section .back-front div.front {
-  top: 4.5rem;
+section div.back-front div.img {
+  top: 5rem;
   width: 100%;
+  margin: 0 auto;
   position: relative;
   display: flex;
   align-items: center;
@@ -268,21 +478,61 @@ section .back-front div.front {
   gap: 0px;
 }
 
-section .back-front div.front img {
-  width: 220px;
-  height: 220px;
-  padding: .1rem;
-  margin: 0 auto;
-  overflow: hidden;
-  object-fit: cover;
-  border-radius: 50%;
-  background: #ccc;
+@media (max-width: 1230px) {
+  section div.back-front div.img {
+    left: 1rem;
+  }
 }
 
-section .back-front div.controls {
-  bottom: 0px;
-  width: 500px;
+@media (max-width: 768px) {
+  section div.back-front div.img {
+    left: 0rem;
+    top: -3.6rem;
+  }
+}
+
+@media (max-width: 577px) {
+  section div.back-front div.img {
+    top: -3.3rem;
+  }
+}
+
+section div.back-front div.img img {
   display: block;
+  margin: 0 auto;
+  background: #ccc;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  padding: 0.1rem;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  section div.back-front div.img img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    padding: _;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 577px) {
+  section div.back-front div.img img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    padding: 0.1rem;
+    object-fit: cover;
+  }
+}
+
+section div.back-front div.controls {
+  width: 90%;
+  bottom: 0px;
+  right: 3rem;
+  margin: 0 auto;
   position: absolute;
   display: flex;
   align-items: center;
@@ -291,11 +541,43 @@ section .back-front div.controls {
   gap: 0px;
 }
 
-section .back-front div.controls i {
+@media (max-width: 1230px) {
+  section div.back-front div.controls {
+    right: 0rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  section div.back-front div.controls {
+    right: 0rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  section div.back-front div.controls {
+    bottom: -3rem;
+  }
+}
+
+@media (max-width: 577px) {
+  section div.back-front div.controls {
+    bottom: -4rem;
+  }
+}
+
+section div.back-front div.controls i {
   z-index: 2;
+  width: 40px;
+  height: 40px;
   color: #fff;
   cursor: pointer;
-  padding: .7rem;
   border-radius: 50%;
   background: var(--atual);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
 }

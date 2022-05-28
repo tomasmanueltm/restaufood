@@ -19,6 +19,7 @@
   list-style: none;
   font-weight: 600;
   font-family: Lato;
+  word-break: keep-all;
   text-decoration: none;
   box-sizing: border-box;
   scroll-behavior: smooth;
