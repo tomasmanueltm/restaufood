@@ -76,6 +76,16 @@ header {
   gap: 1rem;
 }
 
+@media (max-width: 375px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
 header nav h1 {
   float: left;
   color: #3c5063;
@@ -348,6 +358,18 @@ section div.back-front {
   }
 }
 
+@media (max-width: 375px) {
+  section div.back-front {
+    left: unset;
+  }
+}
+
+@media (max-width: 320px) {
+  section div.back-front {
+    left: -1rem;
+  }
+}
+
 @media (max-width: 1230px) {
   section div.back-front .org {
     top: 7rem;
@@ -361,6 +383,7 @@ section div.back-front {
   section div.back-front .org {
     left: 0rem;
     top: 3.5rem;
+    width: 500px;
   }
 }
 
@@ -368,7 +391,7 @@ section div.back-front {
   section div.back-front .org {
     top: unset;
     left: unset;
-    width: 100%;
+    width: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -377,16 +400,38 @@ section div.back-front {
   }
 }
 
+@media (max-width: 460px) {
+  section div.back-front .org {
+    left: 0rem;
+    width: 400px;
+  }
+}
+
+@media (max-width: 425px) {
+  section div.back-front .org {
+    top: 0.6rem;
+    width: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  section div.back-front .org {
+    left: 0rem;
+    top: 1.8rem;
+    width: 280px;
+  }
+}
+
 section div.back-front .produtos {
   z-index: -2;
   top: -48rem;
   right: -12rem;
-  width: 1100px;
-  height: 1100px;
   overflow: hidden;
-  border-radius: 50%;
   position: absolute;
   background: var(--atual);
+  width: 1100px;
+  height: 1100px;
+  border-radius: 50%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -394,16 +439,32 @@ section div.back-front .produtos {
   gap: 0px;
 }
 
+section div.back-front .produtos::before {
+  top: 3rem;
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: none;
+  border-radius: 50%;
+  position: relative;
+  border: 2px dotted var(--atual);
+}
+
 @media (max-width: 577px) {
   section div.back-front .produtos::before {
-    width: 100%;
-    height: 100%;
     display: block;
-    border-radius: 50%;
-    position: relative;
-    border: 2px dotted var(--atual);
-    content: "";
-    top: 3rem;
+  }
+}
+
+@media (max-width: 425px) {
+  section div.back-front .produtos::before {
+    top: unset;
+  }
+}
+
+@media (max-width: 375px) {
+  section div.back-front .produtos::before {
+    top: 1rem;
   }
 }
 
@@ -416,12 +477,13 @@ section div.back-front .produtos {
 @media (max-width: 998px) {
   section div.back-front .produtos {
     top: 0rem;
-    width: 500px;
-    height: 500px;
     right: unset;
     margin: 0 auto;
     overflow: unset;
     position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
     display: flex;
     align-items: _;
     justify-content: center;
@@ -432,23 +494,40 @@ section div.back-front .produtos {
 
 @media (max-width: 768px) {
   section div.back-front .produtos {
-    bottom: 2rem;
     left: 0px;
-    width: 400px;
-    height: 400px;
+    bottom: 2rem;
     overflow: unset;
     background: unset;
     position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 425px) {
+  section div.back-front .produtos {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 375px) {
+  section div.back-front .produtos {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
   }
 }
 
 section div.back-front .produtos div {
-  width: 100%;
   bottom: 20px;
-  height: 340px;
   margin: 0 auto;
   position: absolute;
   padding: 3.5rem 0 0;
+  width: 100%;
+  height: 340px;
 }
 
 @media (max-width: 1230px) {
@@ -474,13 +553,19 @@ section div.back-front .produtos div {
   }
 }
 
+@media (max-width: 425px) {
+  section div.back-front .produtos div {
+    top: -5px;
+  }
+}
+
 section div.back-front .produtos div ul {
   z-index: 0;
+  margin: 0 auto;
+  position: relative;
   width: 580px;
   height: 580px;
-  margin: 0 auto;
   border-radius: 50%;
-  position: relative;
   border: 1px dashed #95c454;
   display: flex;
   align-items: center;
@@ -491,17 +576,25 @@ section div.back-front .produtos div ul {
 
 @media (max-width: 998px) {
   section div.back-front .produtos div ul {
-    width: 400px;
     border: none;
+    width: 400px;
     height: 400px;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 425px) {
+  section div.back-front .produtos div ul {
+    width: 100%;
+    height: 200px;
   }
 }
 
 section div.back-front .produtos div ul li {
-  width: 90px;
-  height: 90px;
   overflow: hidden;
   position: absolute;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   transform: rotate(calc(var(--x) * (360deg / 10))) translateY(295px);
 }
@@ -515,7 +608,7 @@ section div.back-front .produtos div ul li {
 @media (max-width: 768px) {
   section div.back-front .produtos div ul li {
     border: 3px solid var(--atual);
-    transform: rotate(calc(var(--x) * (360deg / 10))) translateY(198px);
+    transform: rotate(calc(var(--x) * (360deg / 10))) translateY(215px);
   }
 }
 
@@ -523,6 +616,26 @@ section div.back-front .produtos div ul li {
   section div.back-front .produtos div ul li {
     width: 70px;
     height: 70px;
+    border-radius: 50%;
+    transform: rotate(calc(var(--x) * (360deg / 10))) translateY(198px);
+  }
+}
+
+@media (max-width: 425px) {
+  section div.back-front .produtos div ul li {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transform: rotate(calc(var(--x) * (360deg / 10))) translateY(150px);
+  }
+}
+
+@media (max-width: 375px) {
+  section div.back-front .produtos div ul li {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transform: rotate(calc(var(--x) * (360deg / 10))) translateY(125px);
   }
 }
 
@@ -562,6 +675,18 @@ section div.back-front div.img {
 @media (max-width: 768px) {
   section div.back-front div.img {
     left: 0rem;
+    top: 2.3rem;
+  }
+}
+
+@media (max-width: 577px) {
+  section div.back-front div.img {
+    top: 2.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  section div.back-front div.img {
     top: 2rem;
   }
 }
@@ -602,6 +727,26 @@ section div.back-front div.img img {
   section div.back-front div.img img {
     width: 250px;
     height: 250px;
+    border-radius: 50%;
+    padding: 0.1rem;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 425px) {
+  section div.back-front div.img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding: 0.1rem;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 375px) {
+  section div.back-front div.img img {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     padding: 0.1rem;
     object-fit: cover;
@@ -649,13 +794,31 @@ section div.back-front div.controls {
     left: unset;
     width: 100%;
     right: unset;
-    bottom: -3rem;
+    bottom: -8rem;
   }
 }
 
 @media (max-width: 577px) {
   section div.back-front div.controls {
     bottom: -6rem;
+  }
+}
+
+@media (max-width: 460px) {
+  section div.back-front div.controls {
+    bottom: -9rem;
+  }
+}
+
+@media (max-width: 425px) {
+  section div.back-front div.controls {
+    bottom: -9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  section div.back-front div.controls {
+    bottom: -7rem;
   }
 }
 
